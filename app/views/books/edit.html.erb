@@ -1,0 +1,27 @@
+<% if @edit_book.errors.any? %>
+  <div class="alert alert-warning">
+  	<%= @edit_book.errors.count %> error prohibited this obj from being saved:
+    <ul>
+      <% @edit_book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h2>Editing Book</h2>
+<%= form_for(@edit_book) do |f| %>
+
+	<h4>Title</h4>
+	<%= f.text_field :title %>
+
+	<h4>Opinion</h4>
+	<%= f.text_area :body %>
+
+	<%= f.submit'Update Book' %>
+<% end %>
+
+<%= link_to 'Show', book_path(@edit_book) %>
+|
+<%= link_to 'Back', '/books' %>
+

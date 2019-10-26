@@ -1,0 +1,30 @@
+<h1>Sign up</h1>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+     <div class="form-group1">
+       <label class="control-label" for="inputName">Name</label>
+       <br>
+		<%= f.text_field :name, autofocus: true, class:"", id:"inputName", placeholder:""%>
+	 </div>
+
+	 <div class="form-group2">
+	   <label class="control-label" for="inputEmail">Email</label>
+	   <br>
+		<%= f.email_field :email, class:"", id:"inputEmail", placeholder:""%>
+	 </div>
+
+	<div class="form-group2">
+	 	<label class="control-label" for="inoputPassword">Password (6 characteres minimum)</label>
+	 	<br>
+		<%= f.password_field :password, autocomplete: "off", class:"", id:"inputPassword", placeholder:"" %>
+	</div>
+
+	<div class="form-group3">
+		<label class="control-label" for="inputConfirmPassword">Password confirmation</label>
+		<br>
+		<%= f.password_field :password_confirmation, autocomplete: "off", class:"", id:"inputConfirmPassword", placeholder:"" %>
+	</div>
+
+		<%= f.submit "Sign up", class: "btn btn-success" %>
+<% end %>
+<%= link_to "log in", new_user_session_path %>
