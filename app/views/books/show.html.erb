@@ -7,11 +7,10 @@
 <%= render 'books/list', user: @post_book.user  %>
 <div class="col-xs-9">
 <h2>Book detail</h2>
-<table>
+<table class="table">
 <tbody>
 <tr>
-	<td style="width: 60px"><%= attachment_image_tag @post_book.user, :profile_image, :fill, 60, 60, class: "profile-thumb", fallback: "no_image.jpg" %>
-		<%=link_to @post_book.user.name, user_path(@post_book.user.id) %></td>
+	<td style="width: 60px"><%= attachment_image_tag @post_book.user, :profile_image, :fill, 60, 60, class: "profile-thumb", fallback: "no_image.jpg" %><%=link_to @post_book.user.name, user_path(@post_book.user.id) %></td>
 	<td><%= @post_book.title %></td>
 	<td><%= @post_book.body %></td>
 
